@@ -1,9 +1,9 @@
 # vertx-clustered-session-handler-issue
-Demonstration to illustrate race condition for Vertx 3.1.0-SNAPSHOT Clustered Session Store/Session Handler.
+Demonstration to illustrate a race condition which exists in the Vertx 3.1.0-SNAPSHOT Clustered Session Store/Session Handler.
 
 Appears to be a race condition when the Session handler sets up a routingContext.addHeadersEndHandler that completes asynchronously. Corruption appears to happen when writing occurs to the response while waiting for the addHeadersEndHandler future to complete (in this case the stream is being written to by a Pump, but also occurs with normal writing - i.e. chunked response).
 
-Demonstration uses a proxy setup to display a number of images (Googles logo) so the corruption of the stream is simple to see.
+The demonstration uses a proxy setup to display a number of images (the Google logo) so the corruption of the stream is easy to spot.
 
 To run (with gradle installed):
 ``` 
