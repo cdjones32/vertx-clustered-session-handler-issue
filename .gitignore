@@ -1,0 +1,30 @@
+# Don't commit backup files
+*.*~
+\#*#
+
+# Ignore OSX desktop services file
+.DS_Store
+
+.gradle
+.idea
+.vertx
+build/
+dist/
+
+# Don't commit spurious jsdoc folders
+out/
+jsdoc/
+
+# Ignore Merge files
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+
+# Ignore log files
+*.log
+
+# Ignore docker working files
+*.tar
+*.zip
+

@@ -1,0 +1,27 @@
+apply plugin: 'java'
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+version = "0.0.1-snapshot"
+
+repositories {
+  mavenCentral()
+  maven {
+    url = "http://oss.sonatype.org/content/repositories/snapshots/"
+  }
+}
+
+dependencies {
+  testCompile group: 'junit', name: 'junit', version: '4.11'
+
+  compile "io.vertx:vertx-core:3.1.0-SNAPSHOT",
+          "io.vertx:vertx-web:3.1.0-SNAPSHOT",
+          "io.vertx:vertx-hazelcast:3.1.0-SNAPSHOT"
+}
+
+task(run, dependsOn: 'classes', type: JavaExec) {
+    main = 'DemonstrateIssue'
+    classpath = sourceSets.main.runtimeClasspath
+}
