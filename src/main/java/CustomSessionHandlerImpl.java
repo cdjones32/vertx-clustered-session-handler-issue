@@ -3,7 +3,7 @@
  * so that is is not asynchronous. This prevents the race condition between the context.addHeadersEndHandler call
  * and the response writes.
  *
- * The changes will be marked with **************** for easy identification.
+ * The changes will be marked with **** for easy identification.
  */
 
 import io.vertx.core.logging.Logger;
